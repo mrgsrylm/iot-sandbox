@@ -3,18 +3,7 @@ package com.gusrylmubarok.ecommerce.rest.entity;
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
-import javax.persistence.Basic;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "user")
@@ -45,13 +34,17 @@ public class UserEntity {
   private String phone;
 
   @Column(name = "USER_STATUS")
-  private String userStatus;
+  private String userStatus = "ACTIVE";
+
+  @Column(name = "ROLE")
+  @Enumerated(EnumType.STRING)
+  private RoleEnum role = RoleEnum.USER;
 
   @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
   @JoinTable(
-      name = "USER_ADDRESS",
-      joinColumns = @JoinColumn(name = "USER_ID"),
-      inverseJoinColumns = @JoinColumn(name = "ADDRESS_ID")
+          name = "USER_ADDRESS",
+          joinColumns = @JoinColumn(name = "USER_ID"),
+          inverseJoinColumns = @JoinColumn(name = "ADDRESS_ID")
   )
   private List<AddressEntity> addresses = Collections.emptyList();;
 
@@ -141,7 +134,7 @@ public class UserEntity {
   }
 
   public UserEntity setAddresses(
-      List<AddressEntity> addresses) {
+          List<AddressEntity> addresses) {
     this.addresses = addresses;
     return this;
   }
@@ -171,5 +164,33 @@ public class UserEntity {
   public UserEntity setOrder(List<OrderEntity> order) {
     this.orders = order;
     return this;
+  }
+
+  public RoleEnum getRole() {
+    return role;
+  }
+
+  public UserEntity setRole(RoleEnum role) {
+    this.role = role;
+    return this;
+  }
+
+  @Override
+  public String toString() {
+    return "UserEntity{" +
+            "id=" + id +
+            ", username='" + username + '\'' +
+            ", password='" + password + '\'' +
+            ", firstName='" + firstName + '\'' +
+            ", lastName='" + lastName + '\'' +
+            ", email='" + email + '\'' +
+            ", phone='" + phone + '\'' +
+            ", userStatus='" + userStatus + '\'' +
+            ", role=" + role +
+            ", addresses=" + addresses +
+            ", cards=" + cards +
+            ", cart=" + cart +
+            ", orders=" + orders +
+            '}';
   }
 }

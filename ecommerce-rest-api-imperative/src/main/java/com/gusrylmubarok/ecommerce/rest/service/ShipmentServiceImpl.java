@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ShipmentServiceImpl implements ShipmentService {
-
   private ShipmentRepository repository;
 
   public ShipmentServiceImpl(ShipmentRepository repository) {

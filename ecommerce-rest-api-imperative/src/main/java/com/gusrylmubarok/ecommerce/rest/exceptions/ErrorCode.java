@@ -20,7 +20,9 @@ public enum ErrorCode {
     RESOURCE_NOT_FOUND("SERVER-0010", "Requested resource not found"),
     CUSTOMER_NOT_FOUND("SERVER-0011", "Requested customer not found"),
     ITEM_NOT_FOUND("SERVER-0012", "Requested item not found"),
-    GENERIC_ALREADY_EXISTS("SERVER-0013", "Already exists.");
+    GENERIC_ALREADY_EXISTS("SERVER-0013", "Already exists."),
+    ACCESS_DENIED("SERVER-0014", "Access Denied."),
+    UNAUTHORIZED("SERVER-0015", "Unauthorized");
 
     private String errCode;
     private String errMsgKey;
