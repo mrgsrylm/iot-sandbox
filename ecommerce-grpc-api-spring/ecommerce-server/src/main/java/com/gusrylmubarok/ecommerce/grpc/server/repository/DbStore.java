@@ -138,7 +138,7 @@ public class DbStore {
         .setStreet("Street").setCity("City").setState("State").setCountry("Country")
         .setPostalCode("12345").build();
     return Owner.newBuilder().setName("Scott").setAddress(address)
-        .setEmail("scott@packt.modern.api")
+        .setEmail("scott@gmail.com")
         .setPhone("9999999999").build();
   }
 

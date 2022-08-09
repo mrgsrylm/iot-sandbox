@@ -1,0 +1,40 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.2'
+	id 'io.spring.dependency-management' version '1.0.12.RELEASE'
+	id 'java'
+	id 'com.netflix.dgs.codegen' version '4.6.4'
+}
+
+group = 'com.gusrylmubarok.ecommerce.graphql'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+def dgsVersion = '3.12.1'
+dependencies {
+	implementation platform("com.netflix.graphql.dgs:graphql-dgs-platform-dependencies:${dgsVersion}")
+	implementation 'com.netflix.graphql.dgs:graphql-dgs-spring-boot-starter'
+	implementation 'com.netflix.graphql.dgs:graphql-dgs-extended-scalars'
+	runtimeOnly 'com.netflix.graphql.dgs:graphql-dgs-subscriptions-websockets-autoconfigure'
+	implementation 'com.graphql-java-kickstart:playground-spring-boot-starter:11.1.0'
+	implementation 'com.graphql-java:graphql-java-tools:5.2.4'
+	implementation 'org.yaml:snakeyaml:1.28'
+
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'com.github.javafaker:javafaker:1.0.2'
+}
+
+generateJava {
+	packageName = "com.gusrylmubarok.ecommerce.graphql.generated"
+	generateClient = true
+	typeMapping = ["BigDecimal": "java.math.BigDecimal"]
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
