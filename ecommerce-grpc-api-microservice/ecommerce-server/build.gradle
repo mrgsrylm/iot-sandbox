@@ -1,0 +1,32 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.2'
+	id 'io.spring.dependency-management' version '1.0.12.RELEASE'
+	id 'java'
+}
+
+group = 'com.gusrylmubarok.ecommerce.grpc'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+	mavenLocal()
+}
+
+def grpcVersion = '1.48.1'
+dependencies {
+	implementation 'com.gusrylmubarok.ecommerce.grpc:payment-gateway-api:0.0.1'
+	implementation "io.grpc:grpc-protobuf:${grpcVersion}"
+	implementation "io.grpc:grpc-stub:${grpcVersion}"
+	implementation "io.grpc:grpc-netty:${grpcVersion}"
+	implementation 'com.google.api.grpc:googleapis-common-protos:0.0.3'
+
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation "io.grpc:grpc-testing:${grpcVersion}"
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
