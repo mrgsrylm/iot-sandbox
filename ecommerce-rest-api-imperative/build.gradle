@@ -96,6 +96,11 @@ jacocoTestCoverageVerification {
 	}
 }
 
+bootBuildImage {
+    imageName = "192.168.80.1:5000/${project.name}:${project.version}"
+    environment = ["BP_JVM_VERSION" : "17"]
+}
+
 repositories {
 	mavenCentral()
 }
@@ -115,6 +120,7 @@ dependencies {
 	// OpenAPI Ends
 
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	runtimeOnly 'org.springframework.boot:spring-boot-starter-actuator'
 
 	// DB Starts
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'

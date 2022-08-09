@@ -9,7 +9,10 @@ import io.grpc.ManagedChannelBuilder;
 import java.util.concurrent.TimeUnit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.sleuth.brave.instrument.grpc.GrpcManagedChannelBuilderCustomizer;
+import org.springframework.cloud.sleuth.brave.instrument.grpc.SpringAwareManagedChannelBuilder;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -22,13 +25,14 @@ public class GrpcClient {
   @Value("${grpc.server.port:8080}")
   private int port;
 
+  @Autowired
+  private SpringAwareManagedChannelBuilder builder;
   private ManagedChannel channel;
   private SourceServiceBlockingStub sourceServiceStub;
   private ChargeServiceBlockingStub chargeServiceStub;
 
   public void start() {
-    channel = ManagedChannelBuilder.forAddress(host, port).usePlaintext().build();
-
+    channel = builder.forAddress(host, port).usePlaintext().build();
     sourceServiceStub = SourceServiceGrpc.newBlockingStub(channel);
     chargeServiceStub = ChargeServiceGrpc.newBlockingStub(channel);
     LOG.info("gRPC client connected to {}:{}", host, port);

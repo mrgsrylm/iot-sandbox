@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class GrpcServer {
+
   private final Logger LOG = LoggerFactory.getLogger(getClass());
 
   @Value("${grpc.port:8080}")
@@ -20,21 +21,26 @@ public class GrpcServer {
 
   private Server server;
 
+  private GrpcTracing grpcTracing;
   private ChargeService chargeService;
   private SourceService sourceService;
   private ExceptionInterceptor exceptionInterceptor;
 
-  public GrpcServer(SourceService sourceService, ChargeService chargeService, ExceptionInterceptor exceptionInterceptor) {
+  public GrpcServer(SourceService sourceService, ChargeService chargeService,
+      ExceptionInterceptor exceptionInterceptor, GrpcTracing grpcTracing) {
     this.sourceService = sourceService;
     this.chargeService = chargeService;
     this.exceptionInterceptor = exceptionInterceptor;
+    this.grpcTracing = grpcTracing;
   }
 
   public void start() throws IOException, InterruptedException {
     LOG.info("gRPC server is starting on port: {}.", port);
+
     server = ServerBuilder.forPort(port)
         .addService(sourceService).addService(chargeService)
         .intercept(exceptionInterceptor)
+        .intercept(grpcTracing.newServerInterceptor())
         .build().start();
     LOG.info("gRPC server started and listening on port: {}.", port);
     LOG.info("Following service are available: ");

@@ -4,6 +4,7 @@ public class Constants {
     public static final String ENCODER_ID = "bcrypt";
     public static final String API_URL_PREFIX = "/api/v1/**";
     public static final String H2_URL_PREFIX = "/h2-console/**";
+    public static final String ACTUATOR_URL_PREFIX = "/actuator/**";
     public static final String SIGNUP_URL = "/api/v1/users";
     public static final String TOKEN_URL = "/api/v1/auth/token";
     public static final String REFRESH_URL = "/api/v1/auth/token/refresh";

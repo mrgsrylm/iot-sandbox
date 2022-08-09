@@ -89,6 +89,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.POST, REFRESH_URL).permitAll()
                 .antMatchers(HttpMethod.GET, PRODUCTS_URL).permitAll()
                 .antMatchers(H2_URL_PREFIX).permitAll()
+                .antMatchers(ACTUATOR_URL_PREFIX).permitAll()
                 .mvcMatchers(HttpMethod.POST, "/api/v1/addresses/**")
                 .hasAuthority(RoleEnum.ADMIN.getAuthority())
                 .anyRequest().authenticated()

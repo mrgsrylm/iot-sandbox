@@ -19,6 +19,12 @@ dependencies {
 	implementation "io.grpc:grpc-stub:${grpcVersion}"
 	implementation 'com.google.protobuf:protobuf-java-util:3.21.4'
 
+    // logging
+    implementation 'net.logstash.logback:logstash-logback-encoder:6.6'
+    implementation 'org.springframework.cloud:spring-cloud-starter-sleuth:3.0.2'
+    implementation 'io.zipkin.brave:brave-instrumentation-grpc:5.13.2'
+    implementation 'org.springframework.cloud:spring-cloud-sleuth-zipkin:3.0.2'
+
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
