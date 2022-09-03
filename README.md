@@ -4,13 +4,13 @@
 This application build with Java with Spring Framework and implementing Microservices Architecture with Agile methodology on development process. Application make users can triain their math skills every day. Every score that user had can calculation on rank boardgame every time.
 </p>
 
-## CI/CD
-
 | Service      | Status     |
 | :------------ |   :---:       |
 | MCA-CORE     | [![mca-core-ci](https://github.com/gusrylmubarok/multiplication-comp-app/actions/workflows/mca-core-ci.yml/badge.svg)](https://github.com/gusrylmubarok/multiplication-comp-app/actions/workflows/mca-core-ci.yml)    |
+| MCA-GAMIFICATION     | [![mca-gamification-ci](https://github.com/gusrylmubarok/multiplication-comp-app/actions/workflows/mca-gamification-ci.yml/badge.svg)](https://github.com/gusrylmubarok/multiplication-comp-app/actions/workflows/mca-gamification-ci.yml)    |
 | MCA-REACTJS     | [![mca-reactjs-ci](https://github.com/gusrylmubarok/multiplication-comp-app/actions/workflows/mca-reactjs-ci.yml/badge.svg)](https://github.com/gusrylmubarok/multiplication-comp-app/actions/workflows/mca-reactjs-ci.yml)   |
 | *****     | *****    |
+
 
 ## User Stories
 
