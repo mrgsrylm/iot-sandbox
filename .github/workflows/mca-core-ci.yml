@@ -23,6 +23,6 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Install Dependency
-        run: ce mca-core && mvn dependency:resolve
+        run: cd mca-core && mvn dependency:resolve
       - name: Unit Test
-        run: mcn clean test
+        run: mvn clean test
