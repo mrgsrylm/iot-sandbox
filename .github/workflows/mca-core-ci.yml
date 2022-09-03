@@ -22,7 +22,5 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
-      - name: Install Dependency
-        run: cd mca-core && mvn dependency:resolve
-      - name: Unit Test
-        run: mvn clean test
+      - name: Install Dependency and Test
+        run: cd mca-core && mvn dependency:resolve test
