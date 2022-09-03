@@ -15,7 +15,7 @@ This application build with Java with Spring Framework and implementing Microser
 
 ### User Story 1
 <p align="justify">
-As a user of the application, I want to be presented with random multiplication that I can solve online not too easy, so I can use mental calculation and make my brain work every day.
+As a user of the application,, I want to solve a random multiplication problem using mental calculation so I exercise my brain.
 </p>
 
 * Sub Tasks :
@@ -29,9 +29,13 @@ As a user of the application, I want to be presented with random multiplication 
     * MultiplicationResultAttempt: contains a reference to the multiplication and a reference to the user.
     
 * Rest API :
-    * GET /multiplications/random : will return the random multiplication.
-    * POST /results/ : will be our endpoint to send results.
-    * GET /results?user=[user_alias] : will be our way od retrieving results of a pacticular user.
+
+| HTTP Verb      | Operation on Collection, e.g /challenges     | Operation on Item, e.g /challenges/3     |
+| :------------ |   :-----       | :-----     |
+| GET     | Gets the full list of items     | Gets the item     |
+| POST     | Creates a new item     | -     |
+| PUT     | -     | Update the item     |
+| DELETE     | Deletes the full collection     | Deletes the item     |
 
 ### User Story 2
 <p align="justify">
