@@ -1,35 +1,29 @@
 package com.gusrylmubarok.multiplicationca.core.domain;
 
-public class Multiplication {
-    private int factorA;
-    private int factorB;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 
-    private int result;
+import javax.persistence.*;
 
-    public Multiplication(int factorA, int factorB) {
-        this.factorA = factorA;
-        this.factorB = factorB;
-        this.result = factorA * factorB;
-    }
+/**
+ * This class represents a Multiplication (a * b).
+ */
+@Entity
+@RequiredArgsConstructor
+@Getter @ToString
+@EqualsAndHashCode
+public final class Multiplication {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "MULTIPLICATION_ID")
+    private Long id;
+    private final int factorA;
+    private final int factorB;
 
-    public int getFactorA() {
-        return factorA;
-    }
-
-    public int getFactorB() {
-        return factorB;
-    }
-
-    public int getResult() {
-        return result;
-    }
-
-    @Override
-    public String toString() {
-        return "Multiplication{" +
-                "factorA=" + factorA +
-                ", factorB=" + factorB +
-                ", result(A*B)=" + result +
-                '}';
+    // Empty constructor for JSON (de)serialization
+    Multiplication() {
+        this(0, 0);
     }
 }
