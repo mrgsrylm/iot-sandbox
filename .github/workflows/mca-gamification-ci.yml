@@ -23,4 +23,4 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Install Dependency and Test
-      run: cd mca-core && mvn dependency:resolve test
+      run: cd mca-gamification && mvn dependency:resolve test
