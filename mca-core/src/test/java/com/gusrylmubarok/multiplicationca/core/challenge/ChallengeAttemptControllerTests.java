@@ -28,10 +28,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 public class ChallengeAttemptControllerTests {
     @MockBean
     private ChallengeService challengeService;
-
     @Autowired
     private MockMvc mvc;
-
     @Autowired
     private JacksonTester<ChallengeAttemptDTO> jsonRequestAttempt;
     @Autowired

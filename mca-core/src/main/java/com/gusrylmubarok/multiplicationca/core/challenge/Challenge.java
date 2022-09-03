@@ -8,7 +8,6 @@ import lombok.ToString;
 /**
  * This clas represents a Challenge to solve a Multiplication (a * b)
  */
-
 @Getter
 @ToString
 @EqualsAndHashCode

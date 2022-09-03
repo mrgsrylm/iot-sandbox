@@ -9,6 +9,7 @@ This application build with Java with Spring Framework and implementing Microser
 | Service      | Status     |
 | :------------ |   :---:       |
 | MCA-CORE     | [![mca-core-ci](https://github.com/gusrylmubarok/multiplication-comp-app/actions/workflows/mca-core-ci.yml/badge.svg)](https://github.com/gusrylmubarok/multiplication-comp-app/actions/workflows/mca-core-ci.yml)    |
+| MCA-REACTJS     | [![mca-reactjs-ci](https://github.com/gusrylmubarok/multiplication-comp-app/actions/workflows/mca-reactjs-ci.yml/badge.svg)](https://github.com/gusrylmubarok/multiplication-comp-app/actions/workflows/mca-reactjs-ci.yml)   |
 | *****     | *****    |
 
 ## User Stories
@@ -40,6 +41,11 @@ As a user of the application,, I want to solve a random multiplication problem u
 ### User Story 2
 <p align="justify">
 As a user of the application, I want it to show me my last attempts, so I can see how good or bad I'm doing over time.
+</p>
+
+### User Story 3
+<p align="justify">
+As a user of the application, I want to be motivated to keep solving challenges every day and not abandon it after a while. This way, I keep exercising my brain and improving over time.
 </p>
 
 

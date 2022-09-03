@@ -1,5 +1,6 @@
 package com.gusrylmubarok.multiplicationca.core.challenge;
 
+import com.gusrylmubarok.multiplicationca.core.clients.GamificationServiceClient;
 import com.gusrylmubarok.multiplicationca.core.user.User;
 import com.gusrylmubarok.multiplicationca.core.user.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -26,10 +27,12 @@ public class ChallengeServiceTests {
     private UserRepository userRepository;
     @Mock
     private ChallengeAttemptRepository attemptRepository;
+    @Mock
+    private GamificationServiceClient gameClient;
 
     @BeforeEach
     public void setUp() {
-        challengeService = new ChallengeServiceImpl(userRepository, attemptRepository);
+        challengeService = new ChallengeServiceImpl(userRepository, attemptRepository, gameClient);
         // Keep in mind that we needed to move the
         // given(attemptRepository)... to the test cases
         // that use it to prevent the unused stubs errors.
@@ -46,6 +49,7 @@ public class ChallengeServiceTests {
         then(resultAttempt.isCorrect()).isTrue();
         verify(userRepository).save(new User("budi_do"));
         verify(attemptRepository).save(resultAttempt);
+        verify(gameClient).sendAttempt(resultAttempt);
     }
 
     @Test
@@ -59,6 +63,7 @@ public class ChallengeServiceTests {
         then(resultAttempt.isCorrect()).isFalse();
         verify(userRepository).save(new User("budi_do"));
         verify(attemptRepository).save(resultAttempt);
+        verify(gameClient).sendAttempt(resultAttempt);
     }
 
     @Test
@@ -76,6 +81,7 @@ public class ChallengeServiceTests {
         then(resultAttempt.getUser()).isEqualTo(existingUser);
         verify(userRepository, never()).save(any());
         verify(attemptRepository).save(resultAttempt);
+        verify(gameClient).sendAttempt(resultAttempt);
     }
 
     @Test
@@ -85,9 +91,11 @@ public class ChallengeServiceTests {
         ChallengeAttempt attempt1 = new ChallengeAttempt(1L, user, 50, 60, 3010, false);
         ChallengeAttempt attempt2 = new ChallengeAttempt(2L, user, 50, 60, 3051, false);
         List<ChallengeAttempt> lastAttempts = List.of(attempt1, attempt2);
-        given(attemptRepository.findTop10ByUserAliasOrderByIdDesc("budi_do")).willReturn(lastAttempts);
+        given(attemptRepository.findTop10ByUserAliasOrderByIdDesc("budi_do"))
+                .willReturn(lastAttempts);
         // when
-        List<ChallengeAttempt> latestAttemptsResult = challengeService.getStatsForUser("budi_do");
+        List<ChallengeAttempt> latestAttemptsResult = challengeService
+                .getStatsForUser("budi_do");
         // then
         then(latestAttemptsResult).isEqualTo(lastAttempts);
     }

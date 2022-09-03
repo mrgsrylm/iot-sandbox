@@ -3,7 +3,7 @@ import ChallengeComponent from '../../components/ChallengeComponent'
 
 test('renders ChallengeComponent page', () => {
   render(<ChallengeComponent />);
-  const titleElement = screen.getByText(/Your new challenge is/i);
+  const titleElement = screen.getByText(/Your New Challenge :/i);
   const aliasForm = screen.getByText(/Your alias:/i);
   const guessForm = screen.getByText(/Your guess:/i);
   const buttonSubmit = screen.getByText(/Submit/i);

@@ -1,5 +1,6 @@
 package com.gusrylmubarok.multiplicationca.core.challenge;
 
+import com.gusrylmubarok.multiplicationca.core.clients.GamificationServiceClient;
 import com.gusrylmubarok.multiplicationca.core.user.User;
 import com.gusrylmubarok.multiplicationca.core.user.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -14,6 +15,7 @@ import java.util.List;
 public class ChallengeServiceImpl implements ChallengeService {
     private final UserRepository userRepository;
     private final ChallengeAttemptRepository attemptRepository;
+    private final GamificationServiceClient gameClient;
 
     @Override
     public ChallengeAttempt verifyAttempt(ChallengeAttemptDTO attemptDTO) {
@@ -38,6 +40,9 @@ public class ChallengeServiceImpl implements ChallengeService {
 
         // Stores the attempt
         ChallengeAttempt storedAttempt = attemptRepository.save(checkedAttempt);
+
+        // sends the attempt to gamification
+        gameClient.sendAttempt(storedAttempt);
 
         return storedAttempt;
     }

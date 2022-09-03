@@ -4,7 +4,7 @@ class LastAttemptsComponent extends React.Component {
 
     render() {
         return (
-            <table>
+            <table className="table table-striped table-hover">
                 <thead>
                 <tr>
                     <th>Challenge</th>
