@@ -1,0 +1,48 @@
+-- IDF_TARGET not set, using default target: esp32
+-- Found Git: /usr/bin/git (found version "2.34.1") 
+-- The C compiler identification is GNU 12.2.0
+-- The CXX compiler identification is GNU 12.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: /home/mrsevenheaven/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /home/mrsevenheaven/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /home/mrsevenheaven/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Building ESP-IDF components for target esp32
+Dependencies lock doesn't exist, solving dependencies.
+Updating lock file at /home/mrsevenheaven/Workspaces/personal/IoTPlayground/esp32-idf/esp32-idf/esp32-idf/dependencies.lock
+Processing 1 dependencies:
+[1/1] idf (5.1.2)
+-- Project sdkconfig file /home/mrsevenheaven/Workspaces/personal/IoTPlayground/esp32-idf/esp32-idf/esp32-idf/sdkconfig
+-- Looking for sys/types.h
+-- Looking for sys/types.h - found
+-- Looking for stdint.h
+-- Looking for stdint.h - found
+-- Looking for stddef.h
+-- Looking for stddef.h - found
+-- Check size of time_t
+-- Check size of time_t - done
+-- Found Python3: /home/mrsevenheaven/.espressif/python_env/idf5.1_py3.10_env/bin/python (found version "3.10.12") found components: Interpreter 
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS - Success
+-- App "esp32-idf" version: 6d790ca-dirty
+-- Adding linker script /home/mrsevenheaven/Workspaces/personal/IoTPlayground/esp32-idf/esp32-idf/esp32-idf/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script /home/mrsevenheaven/esp/esp-idf/components/esp_system/ld/esp32/sections.ld.in
+-- Adding linker script /home/mrsevenheaven/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
+-- Adding linker script /home/mrsevenheaven/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
+-- Adding linker script /home/mrsevenheaven/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
+-- Adding linker script /home/mrsevenheaven/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-data.ld
+-- Adding linker script /home/mrsevenheaven/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.syscalls.ld
+-- Adding linker script /home/mrsevenheaven/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-funcs.ld
+-- Adding linker script /home/mrsevenheaven/esp/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
+-- Components: app_trace app_update bootloader bootloader_support bt cmock console cxx driver efuse esp-tls esp32-camera esp_adc esp_app_format esp_coex esp_common esp_eth esp_event esp_gdbstub esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_mm esp_netif esp_netif_stack esp_partition esp_phy esp_pm esp_psram esp_ringbuf esp_rom esp_system esp_timer esp_wifi espcoredump esptool_py fatfs freertos hal heap http_parser idf_test ieee802154 json log lwip mbedtls mqtt newlib nvs_flash openthread partition_table perfmon protobuf-c protocomm pthread sdmmc soc spi_flash spiffs tcp_transport ulp unity usb vfs wear_levelling wifi_provisioning wpa_supplicant xtensa
+-- Component paths: /home/mrsevenheaven/esp/esp-idf/components/app_trace /home/mrsevenheaven/esp/esp-idf/components/app_update /home/mrsevenheaven/esp/esp-idf/components/bootloader /home/mrsevenheaven/esp/esp-idf/components/bootloader_support /home/mrsevenheaven/esp/esp-idf/components/bt /home/mrsevenheaven/esp/esp-idf/components/cmock /home/mrsevenheaven/esp/esp-idf/components/console /home/mrsevenheaven/esp/esp-idf/components/cxx /home/mrsevenheaven/esp/esp-idf/components/driver /home/mrsevenheaven/esp/esp-idf/components/efuse /home/mrsevenheaven/esp/esp-idf/components/esp-tls /home/mrsevenheaven/esp/esp-idf/components/esp32-camera /home/mrsevenheaven/esp/esp-idf/components/esp_adc /home/mrsevenheaven/esp/esp-idf/components/esp_app_format /home/mrsevenheaven/esp/esp-idf/components/esp_coex /home/mrsevenheaven/esp/esp-idf/components/esp_common /home/mrsevenheaven/esp/esp-idf/components/esp_eth /home/mrsevenheaven/esp/esp-idf/components/esp_event /home/mrsevenheaven/esp/esp-idf/components/esp_gdbstub /home/mrsevenheaven/esp/esp-idf/components/esp_hid /home/mrsevenheaven/esp/esp-idf/components/esp_http_client /home/mrsevenheaven/esp/esp-idf/components/esp_http_server /home/mrsevenheaven/esp/esp-idf/components/esp_https_ota /home/mrsevenheaven/esp/esp-idf/components/esp_https_server /home/mrsevenheaven/esp/esp-idf/components/esp_hw_support /home/mrsevenheaven/esp/esp-idf/components/esp_lcd /home/mrsevenheaven/esp/esp-idf/components/esp_local_ctrl /home/mrsevenheaven/esp/esp-idf/components/esp_mm /home/mrsevenheaven/esp/esp-idf/components/esp_netif /home/mrsevenheaven/esp/esp-idf/components/esp_netif_stack /home/mrsevenheaven/esp/esp-idf/components/esp_partition /home/mrsevenheaven/esp/esp-idf/components/esp_phy /home/mrsevenheaven/esp/esp-idf/components/esp_pm /home/mrsevenheaven/esp/esp-idf/components/esp_psram /home/mrsevenheaven/esp/esp-idf/components/esp_ringbuf /home/mrsevenheaven/esp/esp-idf/components/esp_rom /home/mrsevenheaven/esp/esp-idf/components/esp_system /home/mrsevenheaven/esp/esp-idf/components/esp_timer /home/mrsevenheaven/esp/esp-idf/components/esp_wifi /home/mrsevenheaven/esp/esp-idf/components/espcoredump /home/mrsevenheaven/esp/esp-idf/components/esptool_py /home/mrsevenheaven/esp/esp-idf/components/fatfs /home/mrsevenheaven/esp/esp-idf/components/freertos /home/mrsevenheaven/esp/esp-idf/components/hal /home/mrsevenheaven/esp/esp-idf/components/heap /home/mrsevenheaven/esp/esp-idf/components/http_parser /home/mrsevenheaven/esp/esp-idf/components/idf_test /home/mrsevenheaven/esp/esp-idf/components/ieee802154 /home/mrsevenheaven/esp/esp-idf/components/json /home/mrsevenheaven/esp/esp-idf/components/log /home/mrsevenheaven/esp/esp-idf/components/lwip /home/mrsevenheaven/esp/esp-idf/components/mbedtls /home/mrsevenheaven/esp/esp-idf/components/mqtt /home/mrsevenheaven/esp/esp-idf/components/newlib /home/mrsevenheaven/esp/esp-idf/components/nvs_flash /home/mrsevenheaven/esp/esp-idf/components/openthread /home/mrsevenheaven/esp/esp-idf/components/partition_table /home/mrsevenheaven/esp/esp-idf/components/perfmon /home/mrsevenheaven/esp/esp-idf/components/protobuf-c /home/mrsevenheaven/esp/esp-idf/components/protocomm /home/mrsevenheaven/esp/esp-idf/components/pthread /home/mrsevenheaven/esp/esp-idf/components/sdmmc /home/mrsevenheaven/esp/esp-idf/components/soc /home/mrsevenheaven/esp/esp-idf/components/spi_flash /home/mrsevenheaven/esp/esp-idf/components/spiffs /home/mrsevenheaven/esp/esp-idf/components/tcp_transport /home/mrsevenheaven/esp/esp-idf/components/ulp /home/mrsevenheaven/esp/esp-idf/components/unity /home/mrsevenheaven/esp/esp-idf/components/usb /home/mrsevenheaven/esp/esp-idf/components/vfs /home/mrsevenheaven/esp/esp-idf/components/wear_levelling /home/mrsevenheaven/esp/esp-idf/components/wifi_provisioning /home/mrsevenheaven/esp/esp-idf/components/wpa_supplicant /home/mrsevenheaven/esp/esp-idf/components/xtensa
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/mrsevenheaven/Workspaces/personal/IoTPlayground/esp32-idf/esp32-idf/esp32-idf/build
