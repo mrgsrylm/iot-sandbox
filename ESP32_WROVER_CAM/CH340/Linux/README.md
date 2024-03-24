@@ -1,0 +1,10 @@
+- Open a terminal and type: cd /Library/Extensions/
+- Verify that the kext file is present: 1s | grep usbserial.kext
+- Output should be: usbserial.kext
+- Then type: sudo rm -R usbserial.kext
+- Verify that the .kext file has been removed: 1s | grep usbserial.kext
+- Output should be empty.
+- After you should remove the files stored in receipts folder: cd /private/var/db/receipts/
+- Find the enties: 1s | grep usbserial*
+- Output should be: codebender.cc.ch34xinstaller.usbserial.pkg.bom codebender.cc.ch34xinstaller.usbserial.pkg.plist
+- Remove each one of the files of the above list: sudo rm -r filename`
